@@ -92,6 +92,10 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		return [ 'table', 'pricing', 'pricing table', 'package' ];
 	}
 
+	public function get_style_depends() {
+		return [ 'aefe-main', 'aefe-responsive' ];
+	}
+
 	/**
 	 * Register list widget controls.
 	 *
@@ -127,7 +131,7 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'header_content_section',
 			[
-				'label' => esc_html__( 'Header', 'AEFE' ),
+				'label' => esc_html__( 'Header', 'aefe' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -136,10 +140,10 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->add_control(
 			'package_name',
 			[
-				'label' => esc_html__( 'Package Name', 'AEFE' ),
+				'label' => esc_html__( 'Package Name', 'aefe' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'Starter', 'AEFE' ),
-				'placeholder' => esc_html__( 'Package Name', 'AEFE' ),
+				'default' => esc_html__( 'Starter', 'aefe' ),
+				'placeholder' => esc_html__( 'Package Name', 'aefe' ),
 			]
 		);
 		$this->end_controls_section();
@@ -148,7 +152,7 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'pacakge_price_section',
 			[
-				'label' => esc_html__( 'Price', 'AEFE' ),
+				'label' => esc_html__( 'Price', 'aefe' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -157,10 +161,10 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->add_control(
 			'package_price_currency',
 			[
-				'label' => esc_html__( 'Currency', 'AEFE' ),
+				'label' => esc_html__( 'Currency', 'aefe' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( '$', 'AEFE' ),
-				'placeholder' => esc_html__( 'Currency', 'AEFE' ),
+				'default' => esc_html__( '$', 'aefe' ),
+				'placeholder' => esc_html__( 'Currency', 'aefe' ),
 				'label_block' => true,
 			]
 		);	
@@ -169,10 +173,10 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->add_control(
 			'package_price',
 			[
-				'label' => esc_html__( 'Price', 'AEFE' ),
+				'label' => esc_html__( 'Price', 'aefe' ),
 				'type' => \Elementor\Controls_Manager::NUMBER,
-				'default' => esc_html__( '10', 'AEFE' ),
-				'placeholder' => esc_html__( 'Price', 'AEFE' ),
+				'default' => esc_html__( '10', 'aefe' ),
+				'placeholder' => esc_html__( 'Price', 'aefe' ),
 				'label_block' => true,
 			]
 		);
@@ -182,10 +186,10 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->add_control(
 			'package_duration',
 			[
-				'label' => esc_html__( 'Duration', 'AEFE' ),
+				'label' => esc_html__( 'Duration', 'aefe' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( '/m', 'AEFE' ),
-				'placeholder' => esc_html__( 'Duration', 'AEFE' ),
+				'default' => esc_html__( '/m', 'aefe' ),
+				'placeholder' => esc_html__( 'Duration', 'aefe' ),
 				'label_block' => true,
 			]
 		);
@@ -196,7 +200,7 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'pacakge_content_section',
 			[
-				'label' => esc_html__( 'Content', 'AEFE' ),
+				'label' => esc_html__( 'Content', 'aefe' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -205,9 +209,9 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->add_control(
 			'package_content',
 			[
-				'label' => esc_html__( 'Feature List', 'AEFE' ),
+				'label' => esc_html__( 'Feature List', 'aefe' ),
 				'type' => \Elementor\Controls_Manager::WYSIWYG,	
-				'placeholder' => esc_html__( 'Pacakge Feature', 'AEFE' ),		
+				'placeholder' => esc_html__( 'Pacakge Feature', 'aefe' ),		
 				
 			]
 		);
@@ -218,7 +222,7 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'pacakge_footer_section',
 			[
-				'label' => esc_html__( 'Footer', 'AEFE' ),
+				'label' => esc_html__( 'Footer', 'aefe' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -227,11 +231,11 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->add_control(
 			'pacakge_button_text',
 			[
-				'label' => esc_html__( 'Button Text', 'AEFE' ),
+				'label' => esc_html__( 'Button Text', 'aefe' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Buy Now', 'AEFE' ),								
+				'placeholder' => esc_html__( 'Buy Now', 'aefe' ),								
 				'label_block' => true,
-				'default'		=> esc_html('Buy Now', 'AEFE'),
+				'default'		=> esc_html('Buy Now', 'aefe'),
 			]
 		);
 		
@@ -239,9 +243,9 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->add_control(
 			'pacakge_button_url',
 			[
-				'label' => esc_html__( 'Button URL', 'AEFE' ),
+				'label' => esc_html__( 'Button URL', 'aefe' ),
 				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'AEFE' ),					
+				'placeholder' => esc_html__( 'https://your-link.com', 'aefe' ),					
 				'label_block' => true,				
 			]
 		);
@@ -252,7 +256,7 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'aefe_pricing_heading_section_style',
 			[
-				'label'		=> esc_html__( 'Header', 'AEFE' ),
+				'label'		=> esc_html__( 'Header', 'aefe' ),
 				'tab'		=> \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -344,7 +348,7 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'aefe_pt-price_style',
 			[
-				'label'		=> esc_html__( 'Pricing', 'AEFE' ),
+				'label'		=> esc_html__( 'Pricing', 'aefe' ),
 				'tab'		=> \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -364,7 +368,7 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'label'		=> esc_html__( 'Typography', 'AEFE' ),
+				'label'		=> esc_html__( 'Typography', 'aefe' ),
 				'name' => 'aefe-pt-price-typography',
 				'selector' => '{{WRAPPER}} .aefe-pt-single-pricing-price h2',
 			]
@@ -377,7 +381,7 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'aefe_pt-content_style',
 			[
-				'label'		=> esc_html__( 'Content', 'AEFE' ),
+				'label'		=> esc_html__( 'Content', 'aefe' ),
 				'tab'		=> \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -397,7 +401,7 @@ class AEFE_Pricing_Table extends \Elementor\Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'label'		=> esc_html__( 'Typography', 'AEFE' ),
+				'label'		=> esc_html__( 'Typography', 'aefe' ),
 				'name' => 'aefe-pt-content-typography',
 				'selector' => '{{WRAPPER}} .aefe-pt-single-pricing-content',
 			]

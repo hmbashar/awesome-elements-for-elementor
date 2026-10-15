@@ -5,7 +5,7 @@
  * Version: 1.3
  * Author: Md Abul Bashar
  * Author URI: https://www.facebook.com/hmbashar/
- * Text Domain: AEFE
+ * Text Domain: aefe
  * Elementor tested up to:     3.6.8
  * Elementor Pro tested up to: 3.5.0
  */
@@ -14,20 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-
-//define URL
-define('AEFE_URL', plugin_dir_url( __FILE__ ));
-define('AEFE_PATH', plugin_dir_path(__FILE__));
-define('AEFE_URI', plugin_dir_url( dirname( __FILE__ ) ));
-
-// Define Text Domain
-define('AEFE_TEXTDOMAIN','AEFE');
-
+// Plugin constants
+define( 'AEFE_VERSION',    '1.3' );
+define( 'AEFE_URL',        plugin_dir_url( __FILE__ ) );
+define( 'AEFE_PATH',       plugin_dir_path( __FILE__ ) );
+define( 'AEFE_TEXTDOMAIN', 'aefe' );
 
 
 function aefe_plugin_general_init() {
 
-	// Load plugin file
+	// Load plugin files
 	require_once( AEFE_PATH . '/elementor-addon/includes/elementor-configuration.php' );
 	require_once( AEFE_PATH . '/inc/hooks.php' );
 
@@ -38,45 +34,33 @@ function aefe_plugin_general_init() {
 add_action( 'plugins_loaded', 'aefe_plugin_general_init' );
 
 
-
 /**
- * Enqueue scripts and styles.
+ * Register (but do NOT globally enqueue) plugin assets.
+ *
+ * Individual widgets declare what they need via get_style_depends() /
+ * get_script_depends(), so assets are only loaded on pages that actually
+ * use the widgets.
  */
-function aefe_stylesheet_enque() {    
-    wp_enqueue_style( 'owlcarousel',  AEFE_URL . "assets/css/owl.carousel.min.css");
-    wp_enqueue_style( 'barfilter',  AEFE_URL . "assets/css/barfilter.css");
-	//Awesome Elements plugin main stylesheet
-	wp_enqueue_style( 'aefe_main_stylesheet',  AEFE_URL . "assets/css/style.css");
-	//Awesome Elements Plugin Responsive Stylesheet
-    wp_enqueue_style( 'aefe_responsive_stylesheet',  AEFE_URL . "assets/css/responsive.css", array('aefe_main_stylesheet'));
+function aefe_register_assets() {
+	wp_register_style( 'aefe-owlcarousel', AEFE_URL . 'assets/css/owl.carousel.min.css', [],              AEFE_VERSION );
+	wp_register_style( 'aefe-barfilter',   AEFE_URL . 'assets/css/barfilter.css',         [],              AEFE_VERSION );
+	wp_register_style( 'aefe-main',        AEFE_URL . 'assets/css/style.css',             [],              AEFE_VERSION );
+	wp_register_style( 'aefe-responsive',  AEFE_URL . 'assets/css/responsive.css',        [ 'aefe-main' ], AEFE_VERSION );
 
-	//OWL Carousel jQuery
-	wp_enqueue_script( 'owlcarousel', AEFE_URL . "assets/js/owl.carousel.min.js", array( 'jquery' ), false, true );		
-	wp_enqueue_script( 'aefe_main_jquery', AEFE_URL . "assets/js/main.js", array( 'jquery' ), false, true );
-
-
-
+	wp_register_script( 'aefe-owlcarousel', AEFE_URL . 'assets/js/owl.carousel.min.js', [ 'jquery' ],                     AEFE_VERSION, true );
+	wp_register_script( 'aefe-main',        AEFE_URL . 'assets/js/main.js',             [ 'jquery', 'aefe-owlcarousel' ], AEFE_VERSION, true );
 }
-add_action( 'wp_enqueue_scripts', 'aefe_stylesheet_enque' );
+add_action( 'wp_enqueue_scripts', 'aefe_register_assets' );
 
 
-
-//General Functions
-function aefe_general_function() {
-	add_image_size( 'our-work', 400, 300, true );
-}
-add_action('after_setup_theme', 'aefe_general_function');
-
-
-
-// add custom our own category for this plugin
+// Add custom Elementor widget category
 function aefe_add_elementor_widget_categories( $elements_manager ) {
 
 	$elements_manager->add_category(
 		'aefe-category',
 		[
 			'title' => esc_html__( 'Awesome Elements', 'aefe' ),
-			'icon' => 'fa fa-plug',
+			'icon'  => 'fa fa-plug',
 		]
 	);
 

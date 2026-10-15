@@ -17,7 +17,7 @@ class AEFE_Accordion extends \Elementor\Widget_Base {
 
 	public function get_script_depends() {
 
-		wp_register_script( 'aefe-faq-activation', AEFE_URL . "assets/js/faq-script.js", array( 'jquery' ), false, true );
+		wp_register_script( 'aefe-faq-activation', AEFE_URL . 'assets/js/faq-script.js', [ 'jquery' ], AEFE_VERSION, true );
 
 		return [
 			'aefe-faq-activation',
@@ -103,6 +103,10 @@ class AEFE_Accordion extends \Elementor\Widget_Base {
 	 */
 	public function get_keywords() {
 		return [ 'Accordion', 'FAQ', 'Toggle', 'Question', 'answer' ];
+	}
+
+	public function get_style_depends() {
+		return [ 'aefe-main', 'aefe-responsive' ];
 	}
 
 	/**

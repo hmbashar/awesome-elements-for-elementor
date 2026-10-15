@@ -95,6 +95,14 @@ class AEFE_Testimonial_Slider extends \Elementor\Widget_Base {
 		return [ 'testimonial', 'feedback', 'reviews' ];
 	}
 
+	public function get_style_depends() {
+		return [ 'aefe-owlcarousel', 'aefe-main', 'aefe-responsive' ];
+	}
+
+	public function get_script_depends() {
+		return [ 'aefe-owlcarousel', 'aefe-main' ];
+	}
+
 	/**
 	 * Register list widget controls.
 	 *

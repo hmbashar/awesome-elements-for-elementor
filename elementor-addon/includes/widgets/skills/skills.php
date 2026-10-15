@@ -93,6 +93,14 @@ class AEFE_Skills extends \Elementor\Widget_Base {
 		return [ 'services', 'our services', 'skill', 'profession' ];
 	}
 
+	public function get_style_depends() {
+		return [ 'aefe-barfilter', 'aefe-main', 'aefe-responsive' ];
+	}
+
+	public function get_script_depends() {
+		return [ 'aefe-main' ];
+	}
+
 	/**
 	 * Register list widget controls.
 	 *

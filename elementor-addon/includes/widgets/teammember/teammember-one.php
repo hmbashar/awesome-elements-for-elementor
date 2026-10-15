@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									if(!empty($team_member_slider['aefe-tm-member-picture']['url'])) {
 										$team_img = $team_member_slider['aefe-tm-member-picture']['url'];
 									}else {
-										$team_img = AEFE_URL.'/assets/img/single-team-member-1.png'; // fallback placeholder image
+										$team_img = esc_url( AEFE_URL ) . 'assets/img/single-team-member-1.png'; // fallback placeholder image
 									}	
 									
 									// Facebook URL Field Checked
@@ -73,7 +73,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			if(!empty($settings['aefe-tm-member-picture']['url'])) {
 				$team_single_img = $settings['aefe-tm-member-picture']['url'];
 			}else {
-				$team_single_img = AEFE_URL.'/assets/img/single-team-member-1.png'; // fallback placeholder image
+				$team_single_img = esc_url( AEFE_URL ) . 'assets/img/single-team-member-1.png'; // fallback placeholder image
 			}	
 			
 			// Facebook URL Field Checked

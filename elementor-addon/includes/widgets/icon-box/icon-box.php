@@ -92,6 +92,10 @@ class AEFE_IconBox extends \Elementor\Widget_Base {
 		return [ 'icon', 'icon box', 'service', 'step' ];
 	}
 
+	public function get_style_depends() {
+		return [ 'aefe-main', 'aefe-responsive' ];
+	}
+
 	/**
 	 * Register list widget controls.
 	 *

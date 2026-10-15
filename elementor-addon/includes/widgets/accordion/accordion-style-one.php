@@ -3,8 +3,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-$settings = $this->get_settings_for_display();
-
 $count = 01;
 
 ?>
@@ -31,7 +29,7 @@ $count = 01;
                 </span>
             </div>
             <div class="aefe-faq-1-accordion_content fix">
-                <?php echo esc_html($aefe_accordion_one['aefe_accordion_content']);?>
+                <?php echo wp_kses_post( $aefe_accordion_one['aefe_accordion_content'] ); ?>
             </div>
         </div>	<!--/ Single Accordion-->
       <?php $count++; endforeach; endif; ?>

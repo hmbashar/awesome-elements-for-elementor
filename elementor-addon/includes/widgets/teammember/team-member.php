@@ -92,6 +92,14 @@ class AEFE_TeamMember extends \Elementor\Widget_Base {
 		return [ 'team member', 'Talent', 'Team', 'person' ];
 	}
 
+	public function get_style_depends() {
+		return [ 'aefe-owlcarousel', 'aefe-main', 'aefe-responsive' ];
+	}
+
+	public function get_script_depends() {
+		return [ 'aefe-owlcarousel', 'aefe-main' ];
+	}
+
 	/**
 	 * Register list widget controls.
 	 *
@@ -331,10 +339,9 @@ class AEFE_TeamMember extends \Elementor\Widget_Base {
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aefe_tm_title_typography',
-				'label' =>esc_html__( 'Title Typography', AEFE_TEXTDOMAIN),
-				'selector' => '{{WRAPPER}} .aefe-tm-single-team-member-name h2 a',
-				'selector' => '{{WRAPPER}} .aefe-tm-sth-team-member-name h2',
+				'name'     => 'aefe_tm_title_typography',
+				'label'    => esc_html__( 'Title Typography', AEFE_TEXTDOMAIN),
+				'selector' => '{{WRAPPER}} .aefe-tm-single-team-member-name h2 a, {{WRAPPER}} .aefe-tm-sth-team-member-name h2',
 			]
 		);
 
@@ -355,10 +362,9 @@ class AEFE_TeamMember extends \Elementor\Widget_Base {
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'aefe_tm_subtitle_typography',
-				'label' =>esc_html__( 'Subtitle Typography', AEFE_TEXTDOMAIN),
-				'selector' => '{{WRAPPER}} .aefe-tm-single-team-member-name h3',
-				'selector' => '{{WRAPPER}} .aefe-tm-sth-team-member-name h3',
+				'name'     => 'aefe_tm_subtitle_typography',
+				'label'    => esc_html__( 'Subtitle Typography', AEFE_TEXTDOMAIN),
+				'selector' => '{{WRAPPER}} .aefe-tm-single-team-member-name h3, {{WRAPPER}} .aefe-tm-sth-team-member-name h3',
 			]
 		);
 
@@ -501,15 +507,6 @@ class AEFE_TeamMember extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		if (is_admin())
-		{
-		  // solves the width issue
-		  // The javascript called after elementor scripts are fully loaded.
-		  if ( ! defined( 'ELEMENTOR_VERSION' ) ) {
-			  return;
-		  }
-		  echo "<script>jQuery('.owl-carousel').owlCarousel();</script>";
-		}
 			//load render view to show widget output on frontend/website.
 
 			if(!empty($settings['aefe-tm-repeater-single']) && 'single' == $settings['aefe-tm-repeater-single']) {

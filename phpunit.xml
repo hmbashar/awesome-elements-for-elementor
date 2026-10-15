@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true">
+
+    <testsuites>
+        <testsuite name="Awesome Elements For Elementor">
+            <file>tests/Test_Constants.php</file>
+            <file>tests/Test_OutputEscaping.php</file>
+            <file>tests/Test_AssetRegistration.php</file>
+        </testsuite>
+    </testsuites>
+
+    <source>
+        <include>
+            <file>tools.php</file>
+            <directory>elementor-addon/</directory>
+            <directory>inc/</directory>
+        </include>
+    </source>
+</phpunit>

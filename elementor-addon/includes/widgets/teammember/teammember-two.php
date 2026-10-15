@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php if(!empty($aefe_teammember_slider['aefe-tm-member-picture']['url'])) : ?>
 					<a><img src="<?php echo esc_url($aefe_teammember_slider['aefe-tm-member-picture']['url']); ?>" alt="" /></a>
 				<?php else : ?>
-					<a><img src="<?php echo AEFE_URL ?>assets/img/single-team-member-1.png" alt="" /></a>
+					<a><img src="<?php echo esc_url( AEFE_URL ); ?>assets/img/single-team-member-1.png" alt="" /></a>
 				<?php endif; ?>
 			</div>
 			<!--Team Name-->
@@ -63,7 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php endforeach; else : ?>
 			<!--Team Name-->
 			<div class="aefe-tm-sth-team-member-name">
-				<h2><?php _e('Please add your member list', AEFE_TEXTDOMAIN); ?></h2>
+				<h2><?php esc_html_e( 'Please add your member list', AEFE_TEXTDOMAIN ); ?></h2>
 			</div><!--/ Team Name-->
 		<?php endif; ?>
 	</div>
