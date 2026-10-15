@@ -3,7 +3,7 @@ Contributors: hmbashar
 Tags: elementor, elementor popular widget, cretive elementor widget, elementor addon, awesome design, wordpress plugin
 Requires at least: 4.7
 Tested up to: 6.1.1
-Stable tag: 1.3
+Stable tag: 1.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -67,7 +67,20 @@ No, don't need, this plugin will work with free version, so don't worry.
 
 == Changelog ==
 
-- 1.2.1
+= 1.4 =
+* Security: escape all output with esc_url(), esc_attr(), esc_html(), wp_kses_post()
+* Security: replace _e() with esc_html_e() throughout
+* Security: guard $_GET['activate'] access with current_user_can()
+* Security: replace inline <script> carousel init with data-carousel attributes + external JS
+* Performance: assets now register-only and load only on pages that use the widgets
+* Fix: align version constant and plugin header (both now 1.4)
+* Fix: correct text domain from uppercase AEFE to lowercase aefe
+* Fix: duplicate selector keys in team-member widget controls
+* Fix: remove leftover inline owlCarousel() call from team-member render
+* Dev: add PHPUnit test suite (137 tests)
+* Dev: add GitHub Actions workflow for WordPress.org auto-deploy on release
+
+= 1.2.1 =
     - slider editor view issue fix
     - Added icon box style tab
     - Added Pricing Table Style Tab

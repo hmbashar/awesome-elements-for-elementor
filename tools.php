@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Awesome Elements For Elementor
  * Description: This plugin for elements widget for elementor
- * Version: 1.3
+ * Version: 1.4
  * Author: Md Abul Bashar
  * Author URI: https://www.facebook.com/hmbashar/
  * Text Domain: aefe
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants
-define( 'AEFE_VERSION',    '1.3' );
+define( 'AEFE_VERSION',    '1.4' );
 define( 'AEFE_URL',        plugin_dir_url( __FILE__ ) );
 define( 'AEFE_PATH',       plugin_dir_path( __FILE__ ) );
 define( 'AEFE_TEXTDOMAIN', 'aefe' );
