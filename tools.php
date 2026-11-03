@@ -1,13 +1,13 @@
 <?php
 /*
  * Plugin Name: Awesome Elements For Elementor
- * Description: This plugin for elements widget for elementor
- * Version: 1.4
+ * Description: Awesome Elements For Elementor is an all-in-one addon for Elementor with creative widgets: Pricing Table, Team Member, Testimonial, Skills, Icon Box, and Accordion.
+ * Version: 1.5
  * Author: Md Abul Bashar
  * Author URI: https://www.facebook.com/hmbashar/
  * Text Domain: aefe
- * Elementor tested up to:     3.6.8
- * Elementor Pro tested up to: 3.5.0
+ * Elementor tested up to:     3.28.4
+ * Elementor Pro tested up to: 3.28.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants
-define( 'AEFE_VERSION',    '1.4' );
+define( 'AEFE_VERSION',    '1.5' );
 define( 'AEFE_URL',        plugin_dir_url( __FILE__ ) );
 define( 'AEFE_PATH',       plugin_dir_path( __FILE__ ) );
 define( 'AEFE_TEXTDOMAIN', 'aefe' );

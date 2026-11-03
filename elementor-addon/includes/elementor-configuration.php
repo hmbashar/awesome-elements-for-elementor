@@ -21,7 +21,7 @@ final class Plugin {
 	 * @since 1.0.0
 	 * @var string The addon version.
 	 */
-	const VERSION = '1.4';
+	const VERSION = '1.5';
 
 	/**
 	 * Minimum Elementor Version
@@ -37,7 +37,7 @@ final class Plugin {
 	 * @since 1.0.0
 	 * @var string Minimum PHP version required to run the addon.
 	 */
-	const MINIMUM_PHP_VERSION = '7.3';
+	const MINIMUM_PHP_VERSION = '7.4';
 
 	/**
 	 * Instance
@@ -138,7 +138,7 @@ final class Plugin {
 			'<strong>' . esc_html__( 'Elementor', 'aefe' ) . '</strong>'
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
 
 	}
 
@@ -164,7 +164,7 @@ final class Plugin {
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
 
 	}
 
@@ -190,7 +190,7 @@ final class Plugin {
 			 self::MINIMUM_PHP_VERSION
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
 
 	}
 

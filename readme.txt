@@ -3,7 +3,7 @@ Contributors: hmbashar
 Tags: elementor, elementor widget, elementor addon, page builder, awesome design
 Requires at least: 4.7
 Tested up to: 7.1.3
-Stable tag: 1.4
+Stable tag: 1.5
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Awesome Elements For Elementor is an all-in-one addon for Elementor Page Builder
 
 == Description ==
 
-Awesome Elements For Elementor is an ultimate All in one addons for Elementor Page Builder. It includes most cretive design modules, It has right now 1 and more plus custom widgets coming soon such as Pricing table, Team member, testimonial, Accordion, tab, Countdown Timer etc to create any sites with ease. Take your Elementor page building experience to the next level with "Awesome Elements For Elementor" for Elementor. 
+Awesome Elements For Elementor is an ultimate all-in-one addon for Elementor Page Builder. It includes the most creative design modules, with custom widgets such as Pricing Table, Team Member, Testimonial, Accordion, Skills, and Icon Box to create any site with ease. Take your Elementor page building experience to the next level with "Awesome Elements For Elementor".
 
 You're welcome to contribute to the plugin on the [Github](https://github.com/hmbashar/Awesome-Addon-for-Elementor)
 
@@ -66,6 +66,14 @@ No, don't need, this plugin will work with free version, so don't worry.
 13. Accordion
 
 == Changelog ==
+
+= 1.5 =
+* Fix: align minimum PHP version to 7.4 (matches readme.txt requirement)
+* Fix: escape admin notice output with wp_kses_post() for improved security
+* Fix: correct typos in plugin description ("cretive" → "creative")
+* Update: bump Elementor tested up to 3.28.4
+* Update: improve plugin header description
+* Update: fix WordPress.org readme tags and add required short description
 
 = 1.4 =
 * Security: escape all output with esc_url(), esc_attr(), esc_html(), wp_kses_post()
