@@ -8,7 +8,7 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Awesome Elements For Elementor is an all-in-one addon for Elementor Page Builder with creative widgets including Pricing Table, Team Member, Testimonial, Accordion, Skills, Icon Box, and more.
+All-in-one Elementor addon with creative widgets: Pricing Table, Team Member, Testimonial, Skills, Icon Box, and Accordion.
 
 == Description ==
 
